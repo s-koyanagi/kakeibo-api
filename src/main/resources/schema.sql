@@ -1,0 +1,16 @@
+CREATE SEQUENCE task_id_seq
+    INCREMENT BY 1
+    MAXVALUE 99999999
+    START WITH 1
+    NO CYCLE
+;
+
+CREATE TABLE IF NOT EXISTS users(
+  user_id VARCHAR(36) NOT NULL
+  ,first_name VARCHAR(128) NOT NULL
+  ,last_name VARCHAR(128) NOT NULL
+  ,password text NOT NULL
+  ,email VARCHAR(256) NOT NULL
+  ,PRIMARY KEY (user_id)
+  ,UNIQUE KEY (email)
+);
